@@ -57,9 +57,9 @@ var __toESM = (module, isNodeMode) => {
   return __reExport(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", !isNodeMode && module && module.__esModule ? { get: () => module.default, enumerable: true } : { value: module, enumerable: true })), module);
 };
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Errors.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Errors.js
 var require_Errors = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Errors.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Errors.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.puppeteerErrors = exports.ProtocolError = exports.TimeoutError = exports.CustomError = void 0;
@@ -83,9 +83,9 @@ var require_Errors = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/DeviceDescriptors.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/DeviceDescriptors.js
 var require_DeviceDescriptors = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/DeviceDescriptors.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/DeviceDescriptors.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.devicesMap = void 0;
@@ -1141,9 +1141,9 @@ var require_DeviceDescriptors = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/AriaQueryHandler.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/AriaQueryHandler.js
 var require_AriaQueryHandler = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/AriaQueryHandler.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/AriaQueryHandler.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ariaHandler = void 0;
@@ -1213,9 +1213,9 @@ var require_AriaQueryHandler = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/QueryHandler.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/QueryHandler.js
 var require_QueryHandler = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/QueryHandler.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/QueryHandler.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getQueryHandlerAndSelector = exports.clearCustomQueryHandlers = exports.customQueryHandlerNames = exports.unregisterCustomQueryHandler = exports.registerCustomQueryHandler = void 0;
@@ -1354,9 +1354,9 @@ var require_QueryHandler = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/assert.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/assert.js
 var require_assert = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/assert.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/assert.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.assertNever = exports.assert = void 0;
@@ -1373,9 +1373,9 @@ var require_assert = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/environment.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/environment.js
 var require_environment = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/environment.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/environment.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isNode = void 0;
@@ -1383,9 +1383,9 @@ var require_environment = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ms/index.js
+// ../projects/node_modules/ms/index.js
 var require_ms = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ms/index.js"(exports, module) {
+  "../projects/node_modules/ms/index.js"(exports, module) {
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -1495,9 +1495,9 @@ var require_ms = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/debug/src/common.js
+// ../projects/node_modules/debug/src/common.js
 var require_common = __commonJS({
-  "../../node_modules/puppeteer/node_modules/debug/src/common.js"(exports, module) {
+  "../projects/node_modules/debug/src/common.js"(exports, module) {
     function setup(env) {
       createDebug.debug = createDebug;
       createDebug.default = createDebug;
@@ -1658,9 +1658,9 @@ var require_common = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/debug/src/browser.js
+// ../projects/node_modules/debug/src/browser.js
 var require_browser = __commonJS({
-  "../../node_modules/puppeteer/node_modules/debug/src/browser.js"(exports, module) {
+  "../projects/node_modules/debug/src/browser.js"(exports, module) {
     exports.formatArgs = formatArgs;
     exports.save = save;
     exports.load = load;
@@ -1938,9 +1938,9 @@ var require_supports_color = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/debug/src/node.js
+// ../projects/node_modules/debug/src/node.js
 var require_node = __commonJS({
-  "../../node_modules/puppeteer/node_modules/debug/src/node.js"(exports, module) {
+  "../projects/node_modules/debug/src/node.js"(exports, module) {
     var tty = __require("tty");
     var util = __require("util");
     exports.init = init;
@@ -2109,9 +2109,9 @@ var require_node = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/debug/src/index.js
+// ../projects/node_modules/debug/src/index.js
 var require_src = __commonJS({
-  "../../node_modules/puppeteer/node_modules/debug/src/index.js"(exports, module) {
+  "../projects/node_modules/debug/src/index.js"(exports, module) {
     if (typeof process === "undefined" || process.type === "renderer" || process.browser === true || process.__nwjs) {
       module.exports = require_browser();
     } else {
@@ -2120,9 +2120,9 @@ var require_src = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Debug.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Debug.js
 var require_Debug = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Debug.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Debug.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.debug = void 0;
@@ -2146,9 +2146,9 @@ var require_Debug = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/helper.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/helper.js
 var require_helper = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/helper.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/helper.js"(exports) {
     "use strict";
     var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -2397,11 +2397,11 @@ var require_helper = __commonJS({
       const { Readable } = await Promise.resolve().then(() => __importStar(__require("stream")));
       let eof = false;
       return new Readable({
-        async read(size) {
+        async read() {
           if (eof) {
             return null;
           }
-          const response = await client.send("IO.read", { handle, size });
+          const response = await client.send("IO.read", { handle });
           this.push(response.data, response.base64Encoded ? "base64" : void 0);
           if (response.eof) {
             eof = true;
@@ -2444,9 +2444,9 @@ var require_helper = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/vendor/mitt/src/index.js
+// ../projects/node_modules/puppeteer/lib/cjs/vendor/mitt/src/index.js
 var require_src2 = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/vendor/mitt/src/index.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/vendor/mitt/src/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     function mitt(all) {
@@ -2480,9 +2480,9 @@ var require_src2 = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/EventEmitter.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/EventEmitter.js
 var require_EventEmitter = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/EventEmitter.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/EventEmitter.js"(exports) {
     "use strict";
     var __importDefault = exports && exports.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
@@ -2541,9 +2541,9 @@ var require_EventEmitter = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Connection.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Connection.js
 var require_Connection = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Connection.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Connection.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CDPSession = exports.CDPSessionEmittedEvents = exports.Connection = exports.ConnectionEmittedEvents = void 0;
@@ -2749,9 +2749,9 @@ var require_Connection = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Dialog.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Dialog.js
 var require_Dialog = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Dialog.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Dialog.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Dialog = void 0;
@@ -2793,9 +2793,9 @@ var require_Dialog = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/EmulationManager.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/EmulationManager.js
 var require_EmulationManager = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/EmulationManager.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/EmulationManager.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.EmulationManager = void 0;
@@ -2834,9 +2834,9 @@ var require_EmulationManager = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js
 var require_JSHandle = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js"(exports) {
     "use strict";
     var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -3349,9 +3349,9 @@ var require_JSHandle = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js
 var require_ExecutionContext = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ExecutionContext = exports.EVALUATION_SCRIPT_URL = void 0;
@@ -3493,9 +3493,9 @@ var require_ExecutionContext = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/HTTPRequest.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/HTTPRequest.js
 var require_HTTPRequest = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/HTTPRequest.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/HTTPRequest.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.InterceptResolutionAction = exports.HTTPRequest = exports.DEFAULT_INTERCEPT_RESOLUTION_PRIORITY = void 0;
@@ -3821,9 +3821,9 @@ var require_HTTPRequest = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/SecurityDetails.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/SecurityDetails.js
 var require_SecurityDetails = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/SecurityDetails.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/SecurityDetails.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SecurityDetails = void 0;
@@ -3859,9 +3859,9 @@ var require_SecurityDetails = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/HTTPResponse.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/HTTPResponse.js
 var require_HTTPResponse = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/HTTPResponse.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/HTTPResponse.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.HTTPResponse = void 0;
@@ -3973,9 +3973,9 @@ var require_HTTPResponse = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkEventManager.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkEventManager.js
 var require_NetworkEventManager = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkEventManager.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkEventManager.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NetworkEventManager = void 0;
@@ -4056,9 +4056,9 @@ var require_NetworkEventManager = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkManager.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkManager.js
 var require_NetworkManager = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkManager.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkManager.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.NetworkManager = exports.NetworkManagerEmittedEvents = void 0;
@@ -4383,9 +4383,9 @@ var require_NetworkManager = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/LifecycleWatcher.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/LifecycleWatcher.js
 var require_LifecycleWatcher = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/LifecycleWatcher.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/LifecycleWatcher.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.LifecycleWatcher = void 0;
@@ -4513,9 +4513,9 @@ var require_LifecycleWatcher = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/DOMWorld.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/DOMWorld.js
 var require_DOMWorld = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/DOMWorld.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/DOMWorld.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WaitTask = exports.DOMWorld = void 0;
@@ -5087,9 +5087,9 @@ var require_DOMWorld = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/FrameManager.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/FrameManager.js
 var require_FrameManager = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/FrameManager.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/FrameManager.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Frame = exports.FrameManager = exports.FrameManagerEmittedEvents = void 0;
@@ -5580,9 +5580,9 @@ var require_FrameManager = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/USKeyboardLayout.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/USKeyboardLayout.js
 var require_USKeyboardLayout = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/USKeyboardLayout.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/USKeyboardLayout.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.keyDefinitions = void 0;
@@ -5974,9 +5974,9 @@ var require_USKeyboardLayout = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Input.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Input.js
 var require_Input = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Input.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Input.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Touchscreen = exports.Mouse = exports.Keyboard = void 0;
@@ -6235,9 +6235,9 @@ var require_Input = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Tracing.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Tracing.js
 var require_Tracing = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Tracing.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Tracing.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Tracing = void 0;
@@ -6304,9 +6304,9 @@ var require_Tracing = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Coverage.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Coverage.js
 var require_Coverage = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Coverage.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Coverage.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CSSCoverage = exports.JSCoverage = exports.Coverage = void 0;
@@ -6539,9 +6539,9 @@ var require_Coverage = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/WebWorker.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/WebWorker.js
 var require_WebWorker = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/WebWorker.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/WebWorker.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.WebWorker = void 0;
@@ -6582,9 +6582,9 @@ var require_WebWorker = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Accessibility.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Accessibility.js
 var require_Accessibility = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Accessibility.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Accessibility.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Accessibility = void 0;
@@ -6854,9 +6854,9 @@ var require_Accessibility = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/TimeoutSettings.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/TimeoutSettings.js
 var require_TimeoutSettings = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/TimeoutSettings.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/TimeoutSettings.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TimeoutSettings = void 0;
@@ -6889,9 +6889,9 @@ var require_TimeoutSettings = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/FileChooser.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/FileChooser.js
 var require_FileChooser = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/FileChooser.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/FileChooser.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.FileChooser = void 0;
@@ -6919,9 +6919,9 @@ var require_FileChooser = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/ConsoleMessage.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/ConsoleMessage.js
 var require_ConsoleMessage = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/ConsoleMessage.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/ConsoleMessage.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ConsoleMessage = void 0;
@@ -6952,9 +6952,9 @@ var require_ConsoleMessage = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/PDFOptions.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/PDFOptions.js
 var require_PDFOptions = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/PDFOptions.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/PDFOptions.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.paperFormats = void 0;
@@ -6974,9 +6974,9 @@ var require_PDFOptions = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Page.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Page.js
 var require_Page = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Page.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Page.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Page = void 0;
@@ -7889,9 +7889,9 @@ var require_Page = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Target.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Target.js
 var require_Target = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Target.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Target.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Target = void 0;
@@ -7979,9 +7979,9 @@ var require_Target = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/TaskQueue.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/TaskQueue.js
 var require_TaskQueue = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/TaskQueue.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/TaskQueue.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.TaskQueue = void 0;
@@ -7999,9 +7999,9 @@ var require_TaskQueue = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Browser.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Browser.js
 var require_Browser = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Browser.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Browser.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BrowserContext = exports.Browser = void 0;
@@ -11119,9 +11119,9 @@ var require_lib2 = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/fetch.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/fetch.js
 var require_fetch = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/fetch.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/fetch.js"(exports) {
     "use strict";
     var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -11161,9 +11161,9 @@ var require_fetch = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/constants.js
+// ../projects/node_modules/ws/lib/constants.js
 var require_constants = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/constants.js"(exports, module) {
+  "../projects/node_modules/ws/lib/constants.js"(exports, module) {
     "use strict";
     module.exports = {
       BINARY_TYPES: ["nodebuffer", "arraybuffer", "fragments"],
@@ -11179,9 +11179,9 @@ var require_constants = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/buffer-util.js
+// ../projects/node_modules/ws/lib/buffer-util.js
 var require_buffer_util = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/buffer-util.js"(exports, module) {
+  "../projects/node_modules/ws/lib/buffer-util.js"(exports, module) {
     "use strict";
     var { EMPTY_BUFFER } = require_constants();
     function concat(list, totalLength) {
@@ -11262,9 +11262,9 @@ var require_buffer_util = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/limiter.js
+// ../projects/node_modules/ws/lib/limiter.js
 var require_limiter = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/limiter.js"(exports, module) {
+  "../projects/node_modules/ws/lib/limiter.js"(exports, module) {
     "use strict";
     var kDone = Symbol("kDone");
     var kRun = Symbol("kRun");
@@ -11296,9 +11296,9 @@ var require_limiter = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/permessage-deflate.js
+// ../projects/node_modules/ws/lib/permessage-deflate.js
 var require_permessage_deflate = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/permessage-deflate.js"(exports, module) {
+  "../projects/node_modules/ws/lib/permessage-deflate.js"(exports, module) {
     "use strict";
     var zlib = __require("zlib");
     var bufferUtil = require_buffer_util();
@@ -11554,9 +11554,9 @@ var require_permessage_deflate = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/validation.js
+// ../projects/node_modules/ws/lib/validation.js
 var require_validation = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/validation.js"(exports, module) {
+  "../projects/node_modules/ws/lib/validation.js"(exports, module) {
     "use strict";
     var tokenChars = [
       0,
@@ -11737,9 +11737,9 @@ var require_validation = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/receiver.js
+// ../projects/node_modules/ws/lib/receiver.js
 var require_receiver = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/receiver.js"(exports, module) {
+  "../projects/node_modules/ws/lib/receiver.js"(exports, module) {
     "use strict";
     var { Writable } = __require("stream");
     var PerMessageDeflate = require_permessage_deflate();
@@ -12061,9 +12061,9 @@ var require_receiver = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/sender.js
+// ../projects/node_modules/ws/lib/sender.js
 var require_sender = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/sender.js"(exports, module) {
+  "../projects/node_modules/ws/lib/sender.js"(exports, module) {
     "use strict";
     var net = __require("net");
     var tls = __require("tls");
@@ -12290,9 +12290,9 @@ var require_sender = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/event-target.js
+// ../projects/node_modules/ws/lib/event-target.js
 var require_event_target = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/event-target.js"(exports, module) {
+  "../projects/node_modules/ws/lib/event-target.js"(exports, module) {
     "use strict";
     var { kForOnEventAttribute, kListener } = require_constants();
     var kCode = Symbol("kCode");
@@ -12428,9 +12428,9 @@ var require_event_target = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/extension.js
+// ../projects/node_modules/ws/lib/extension.js
 var require_extension = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/extension.js"(exports, module) {
+  "../projects/node_modules/ws/lib/extension.js"(exports, module) {
     "use strict";
     var { tokenChars } = require_validation();
     function push(dest, name, elem) {
@@ -12596,9 +12596,9 @@ var require_extension = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/websocket.js
+// ../projects/node_modules/ws/lib/websocket.js
 var require_websocket = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/websocket.js"(exports, module) {
+  "../projects/node_modules/ws/lib/websocket.js"(exports, module) {
     "use strict";
     var EventEmitter = __require("events");
     var https = __require("https");
@@ -13231,9 +13231,9 @@ var require_websocket = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/stream.js
+// ../projects/node_modules/ws/lib/stream.js
 var require_stream = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/stream.js"(exports, module) {
+  "../projects/node_modules/ws/lib/stream.js"(exports, module) {
     "use strict";
     var { Duplex } = __require("stream");
     function emitClose(stream) {
@@ -13354,9 +13354,9 @@ var require_stream = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/subprotocol.js
+// ../projects/node_modules/ws/lib/subprotocol.js
 var require_subprotocol = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/subprotocol.js"(exports, module) {
+  "../projects/node_modules/ws/lib/subprotocol.js"(exports, module) {
     "use strict";
     var { tokenChars } = require_validation();
     function parse(header) {
@@ -13402,9 +13402,9 @@ var require_subprotocol = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/lib/websocket-server.js
+// ../projects/node_modules/ws/lib/websocket-server.js
 var require_websocket_server = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/lib/websocket-server.js"(exports, module) {
+  "../projects/node_modules/ws/lib/websocket-server.js"(exports, module) {
     "use strict";
     var EventEmitter = __require("events");
     var http = __require("http");
@@ -13662,9 +13662,9 @@ var require_websocket_server = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/node_modules/ws/index.js
+// ../projects/node_modules/ws/index.js
 var require_ws = __commonJS({
-  "../../node_modules/puppeteer/node_modules/ws/index.js"(exports, module) {
+  "../projects/node_modules/ws/index.js"(exports, module) {
     "use strict";
     var WebSocket2 = require_websocket();
     WebSocket2.createWebSocketStream = require_stream();
@@ -13677,12 +13677,12 @@ var require_ws = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/package.json
+// ../projects/node_modules/puppeteer/package.json
 var require_package = __commonJS({
-  "../../node_modules/puppeteer/package.json"(exports, module) {
+  "../projects/node_modules/puppeteer/package.json"(exports, module) {
     module.exports = {
       name: "puppeteer",
-      version: "13.1.2",
+      version: "13.1.3",
       description: "A high-level API to control headless Chrome over the DevTools Protocol",
       main: "./cjs-entry.js",
       types: "lib/types.d.ts",
@@ -13762,6 +13762,7 @@ var require_package = __commonJS({
         "@types/mime": "2.0.3",
         "@types/mocha": "9.0.0",
         "@types/node": "16.10.9",
+        "@types/progress": "2.0.5",
         "@types/proxy-from-env": "1.0.1",
         "@types/rimraf": "3.0.2",
         "@types/sinon": "10.0.4",
@@ -13781,9 +13782,9 @@ var require_package = __commonJS({
         esprima: "4.0.1",
         expect: "25.2.7",
         husky: "7.0.2",
-        "jpeg-js": "0.3.7",
+        "jpeg-js": "0.4.3",
         mime: "2.5.2",
-        minimist: "1.2.0",
+        minimist: "1.2.5",
         mocha: "9.1.3",
         ncp: "2.0.0",
         pixelmatch: "5.2.1",
@@ -13800,9 +13801,9 @@ var require_package = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/node/NodeWebSocketTransport.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/NodeWebSocketTransport.js
 var require_NodeWebSocketTransport = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/node/NodeWebSocketTransport.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/NodeWebSocketTransport.js"(exports) {
     "use strict";
     var __importDefault = exports && exports.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
@@ -13852,9 +13853,9 @@ var require_NodeWebSocketTransport = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/BrowserWebSocketTransport.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/BrowserWebSocketTransport.js
 var require_BrowserWebSocketTransport = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/BrowserWebSocketTransport.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/BrowserWebSocketTransport.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.BrowserWebSocketTransport = void 0;
@@ -13892,9 +13893,9 @@ var require_BrowserWebSocketTransport = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/BrowserConnector.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/BrowserConnector.js
 var require_BrowserConnector = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/BrowserConnector.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/BrowserConnector.js"(exports) {
     "use strict";
     var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -13975,9 +13976,9 @@ var require_BrowserConnector = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkConditions.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkConditions.js
 var require_NetworkConditions = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkConditions.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/NetworkConditions.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.networkConditions = void 0;
@@ -13996,9 +13997,9 @@ var require_NetworkConditions = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/common/Puppeteer.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Puppeteer.js
 var require_Puppeteer = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/common/Puppeteer.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/common/Puppeteer.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Puppeteer = void 0;
@@ -24802,9 +24803,9 @@ var require_unbzip2_stream = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserFetcher.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserFetcher.js
 var require_BrowserFetcher = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserFetcher.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserFetcher.js"(exports) {
     "use strict";
     var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -25185,9 +25186,9 @@ var require_BrowserFetcher = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/node/PipeTransport.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/PipeTransport.js
 var require_PipeTransport = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/node/PipeTransport.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/PipeTransport.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.PipeTransport = void 0;
@@ -25240,9 +25241,9 @@ var require_PipeTransport = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js
 var require_BrowserRunner = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js"(exports) {
     "use strict";
     var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -25468,9 +25469,9 @@ Error cause: ${error.stack}`);
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/node/Launcher.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/Launcher.js
 var require_Launcher = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/node/Launcher.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/Launcher.js"(exports) {
     "use strict";
     var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -25520,6 +25521,7 @@ var require_Launcher = __commonJS({
         this._isPuppeteerCore = isPuppeteerCore;
       }
       async launch(options = {}) {
+        var _a;
         const { ignoreDefaultArgs = false, args = [], dumpio = false, channel = null, executablePath = null, pipe = false, env = process.env, handleSIGINT = true, handleSIGTERM = true, handleSIGHUP = true, ignoreHTTPSErrors = false, defaultViewport = { width: 800, height: 600 }, slowMo = 0, timeout = 3e4, waitForInitialPage = true, debuggingPort = null } = options;
         const chromeArguments = [];
         if (!ignoreDefaultArgs)
@@ -25565,6 +25567,9 @@ var require_Launcher = __commonJS({
             chromeExecutable = executablePath2;
           }
         }
+        if (!chromeExecutable) {
+          throw new Error("chromeExecutable is not found.");
+        }
         const usePipe = chromeArguments.includes("--remote-debugging-pipe");
         const runner = new BrowserRunner_js_1.BrowserRunner(this.product, chromeExecutable, chromeArguments, userDataDir, isTempUserDataDir);
         runner.start({
@@ -25583,7 +25588,7 @@ var require_Launcher = __commonJS({
             slowMo,
             preferredRevision: this._preferredRevision
           });
-          browser = await Browser_js_1.Browser.create(connection, [], ignoreHTTPSErrors, defaultViewport, runner.proc, runner.close.bind(runner));
+          browser = await Browser_js_1.Browser.create(connection, [], ignoreHTTPSErrors, defaultViewport, (_a = runner.proc) !== null && _a !== void 0 ? _a : void 0, runner.close.bind(runner));
         } catch (error) {
           runner.kill();
           throw error;
@@ -25696,6 +25701,9 @@ var require_Launcher = __commonJS({
           if (missingText)
             throw new Error(missingText);
           firefoxExecutable = executablePath2;
+        }
+        if (!firefoxExecutable) {
+          throw new Error("firefoxExecutable is not found.");
         }
         const runner = new BrowserRunner_js_1.BrowserRunner(this.product, firefoxExecutable, firefoxArguments, userDataDir, isTempUserDataDir);
         runner.start({
@@ -25931,7 +25939,7 @@ var require_Launcher = __commonJS({
       if (!launcher._isPuppeteerCore) {
         const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || process.env.npm_config_puppeteer_executable_path || process.env.npm_package_config_puppeteer_executable_path;
         if (executablePath) {
-          const missingText2 = !fs.existsSync(executablePath) ? "Tried to use PUPPETEER_EXECUTABLE_PATH env variable to launch browser but did not find any executable at: " + executablePath : null;
+          const missingText2 = !fs.existsSync(executablePath) ? "Tried to use PUPPETEER_EXECUTABLE_PATH env variable to launch browser but did not find any executable at: " + executablePath : void 0;
           return { executablePath, missingText: missingText2 };
         }
         downloadPath = process.env.PUPPETEER_DOWNLOAD_PATH || process.env.npm_config_puppeteer_download_path || process.env.npm_package_config_puppeteer_download_path;
@@ -25944,14 +25952,14 @@ var require_Launcher = __commonJS({
         const revision = process.env["PUPPETEER_CHROMIUM_REVISION"];
         if (revision) {
           const revisionInfo2 = browserFetcher.revisionInfo(revision);
-          const missingText2 = !revisionInfo2.local ? "Tried to use PUPPETEER_CHROMIUM_REVISION env variable to launch browser but did not find executable at: " + revisionInfo2.executablePath : null;
+          const missingText2 = !revisionInfo2.local ? "Tried to use PUPPETEER_CHROMIUM_REVISION env variable to launch browser but did not find executable at: " + revisionInfo2.executablePath : void 0;
           return { executablePath: revisionInfo2.executablePath, missingText: missingText2 };
         }
       }
       const revisionInfo = browserFetcher.revisionInfo(launcher._preferredRevision);
       const firefoxHelp = `Run \`PUPPETEER_PRODUCT=firefox npm install\` to download a supported Firefox browser binary.`;
       const chromeHelp = `Run \`npm install\` to download the correct Chromium revision (${launcher._preferredRevision}).`;
-      const missingText = !revisionInfo.local ? `Could not find expected browser (${launcher.product}) locally. ${launcher.product === "chrome" ? chromeHelp : firefoxHelp}` : null;
+      const missingText = !revisionInfo.local ? `Could not find expected browser (${launcher.product}) locally. ${launcher.product === "chrome" ? chromeHelp : firefoxHelp}` : void 0;
       return { executablePath: revisionInfo.executablePath, missingText };
     }
     function Launcher(projectRoot, preferredRevision, isPuppeteerCore, product) {
@@ -25972,9 +25980,9 @@ var require_Launcher = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/revisions.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/revisions.js
 var require_revisions = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/revisions.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/revisions.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.PUPPETEER_REVISIONS = void 0;
@@ -25985,9 +25993,9 @@ var require_revisions = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/node/Puppeteer.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/Puppeteer.js
 var require_Puppeteer2 = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/node/Puppeteer.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/node/Puppeteer.js"(exports) {
     "use strict";
     var __importDefault = exports && exports.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
@@ -26334,9 +26342,9 @@ var require_pkg_dir = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/initialize-node.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/initialize-node.js
 var require_initialize_node = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/initialize-node.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/initialize-node.js"(exports) {
     "use strict";
     var __importDefault = exports && exports.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
@@ -26353,6 +26361,9 @@ var require_initialize_node = __commonJS({
       const productName = isPuppeteerCore ? void 0 : process.env.PUPPETEER_PRODUCT || process.env.npm_config_puppeteer_product || process.env.npm_package_config_puppeteer_product;
       if (!isPuppeteerCore && productName === "firefox")
         preferredRevision = revisions_js_1.PUPPETEER_REVISIONS.firefox;
+      if (!puppeteerRootDirectory) {
+        throw new Error("puppeteerRootDirectory is not found.");
+      }
       return new Puppeteer_js_1.PuppeteerNode({
         projectRoot: puppeteerRootDirectory,
         preferredRevision,
@@ -26364,9 +26375,9 @@ var require_initialize_node = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/lib/cjs/puppeteer/node.js
+// ../projects/node_modules/puppeteer/lib/cjs/puppeteer/node.js
 var require_node4 = __commonJS({
-  "../../node_modules/puppeteer/lib/cjs/puppeteer/node.js"(exports) {
+  "../projects/node_modules/puppeteer/lib/cjs/puppeteer/node.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var initialize_node_js_1 = require_initialize_node();
@@ -26378,9 +26389,9 @@ var require_node4 = __commonJS({
   }
 });
 
-// ../../node_modules/puppeteer/cjs-entry.js
+// ../projects/node_modules/puppeteer/cjs-entry.js
 var require_cjs_entry = __commonJS({
-  "../../node_modules/puppeteer/cjs-entry.js"(exports, module) {
+  "../projects/node_modules/puppeteer/cjs-entry.js"(exports, module) {
     var puppeteerExport = require_node4();
     module.exports = puppeteerExport.default;
   }
