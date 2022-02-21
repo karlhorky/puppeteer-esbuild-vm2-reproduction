@@ -14042,7 +14042,7 @@ var require_package = __commonJS({
   "node_modules/puppeteer/package.json"(exports, module) {
     module.exports = {
       name: "puppeteer",
-      version: "13.3.2",
+      version: "13.3.1",
       description: "A high-level API to control headless Chrome over the DevTools Protocol",
       main: "./cjs-entry.js",
       types: "lib/types.d.ts",
@@ -14066,9 +14066,9 @@ var require_package = __commonJS({
         eslint: '([ "$CI" = true ] && eslint --ext js --ext ts --quiet -f codeframe . || eslint --ext js --ext ts .)',
         "eslint-fix": "eslint --ext js --ext ts --fix .",
         commitlint: "commitlint --from=HEAD~1",
-        prettier: "prettier --check .",
-        "prettier-fix": "prettier --write .",
-        lint: "npm run eslint && npm run build && npm run doc && npm run prettier",
+        markdownlint: "prettier --check **/README.md docs/troubleshooting.md",
+        "markdownlint-fix": "prettier --write **/README.md docs/troubleshooting.md",
+        lint: "npm run eslint && npm run build && npm run doc && npm run markdownlint",
         doc: "node utils/doclint/cli.js",
         "clean-lib": "rimraf lib",
         build: "npm run tsc && npm run generate-d-ts",
@@ -14114,9 +14114,9 @@ var require_package = __commonJS({
         ws: "8.5.0"
       },
       devDependencies: {
-        "@commitlint/cli": "16.2.1",
-        "@commitlint/config-conventional": "16.2.1",
-        "@microsoft/api-documenter": "7.15.3",
+        "@commitlint/cli": "16.1.0",
+        "@commitlint/config-conventional": "16.0.0",
+        "@microsoft/api-documenter": "7.15.2",
         "@microsoft/api-extractor": "7.19.4",
         "@types/debug": "4.1.7",
         "@types/mime": "2.0.3",
@@ -14133,7 +14133,7 @@ var require_package = __commonJS({
         "@web/test-runner": "0.13.27",
         commonmark: "0.30.0",
         "cross-env": "7.0.3",
-        eslint: "8.9.0",
+        eslint: "8.8.0",
         "eslint-config-prettier": "8.3.0",
         "eslint-plugin-import": "2.25.4",
         "eslint-plugin-mocha": "10.0.3",
@@ -25309,10 +25309,14 @@ var require_Launcher = __commonJS({
           (0, assert_js_1.assert)(!executablePath, "`executablePath` must not be specified when `channel` is given.");
           chromeExecutable = executablePathForChannel(channel);
         } else if (!executablePath) {
-          const { missingText, executablePath: executablePath2 } = resolveExecutablePath(this);
-          if (missingText)
-            throw new Error(missingText);
-          chromeExecutable = executablePath2;
+          if (os.platform() !== "darwin" && os.arch() === "arm64") {
+            chromeExecutable = "/usr/bin/chromium-browser";
+          } else {
+            const { missingText, executablePath: executablePath2 } = resolveExecutablePath(this);
+            if (missingText)
+              throw new Error(missingText);
+            chromeExecutable = executablePath2;
+          }
         }
         if (!chromeExecutable) {
           throw new Error("chromeExecutable is not found.");
@@ -25685,28 +25689,23 @@ var require_Launcher = __commonJS({
       return chromePath;
     }
     function resolveExecutablePath(launcher) {
-      const { product, _isPuppeteerCore, _projectRoot, _preferredRevision } = launcher;
       let downloadPath;
-      if (!_isPuppeteerCore) {
+      if (!launcher._isPuppeteerCore) {
         const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || process.env.npm_config_puppeteer_executable_path || process.env.npm_package_config_puppeteer_executable_path;
         if (executablePath) {
           const missingText2 = !fs.existsSync(executablePath) ? "Tried to use PUPPETEER_EXECUTABLE_PATH env variable to launch browser but did not find any executable at: " + executablePath : void 0;
           return { executablePath, missingText: missingText2 };
         }
-        const ubuntuChromiumPath = "/usr/bin/chromium-browser";
-        if (product === "chrome" && os.platform() !== "darwin" && os.arch() === "arm64" && fs.existsSync(ubuntuChromiumPath)) {
-          return { executablePath: ubuntuChromiumPath, missingText: void 0 };
-        }
         downloadPath = process.env.PUPPETEER_DOWNLOAD_PATH || process.env.npm_config_puppeteer_download_path || process.env.npm_package_config_puppeteer_download_path;
       }
-      if (!_projectRoot) {
+      if (!launcher._projectRoot) {
         throw new Error("_projectRoot is undefined. Unable to create a BrowserFetcher.");
       }
-      const browserFetcher = new BrowserFetcher_js_1.BrowserFetcher(_projectRoot, {
-        product,
+      const browserFetcher = new BrowserFetcher_js_1.BrowserFetcher(launcher._projectRoot, {
+        product: launcher.product,
         path: downloadPath
       });
-      if (!_isPuppeteerCore && product === "chrome") {
+      if (!launcher._isPuppeteerCore && launcher.product === "chrome") {
         const revision = process.env["PUPPETEER_CHROMIUM_REVISION"];
         if (revision) {
           const revisionInfo2 = browserFetcher.revisionInfo(revision);
@@ -25714,10 +25713,10 @@ var require_Launcher = __commonJS({
           return { executablePath: revisionInfo2.executablePath, missingText: missingText2 };
         }
       }
-      const revisionInfo = browserFetcher.revisionInfo(_preferredRevision);
+      const revisionInfo = browserFetcher.revisionInfo(launcher._preferredRevision);
       const firefoxHelp = `Run \`PUPPETEER_PRODUCT=firefox npm install\` to download a supported Firefox browser binary.`;
       const chromeHelp = `Run \`npm install\` to download the correct Chromium revision (${launcher._preferredRevision}).`;
-      const missingText = !revisionInfo.local ? `Could not find expected browser (${product}) locally. ${product === "chrome" ? chromeHelp : firefoxHelp}` : void 0;
+      const missingText = !revisionInfo.local ? `Could not find expected browser (${launcher.product}) locally. ${launcher.product === "chrome" ? chromeHelp : firefoxHelp}` : void 0;
       return { executablePath: revisionInfo.executablePath, missingText };
     }
     function Launcher(projectRoot, preferredRevision, isPuppeteerCore, product) {
@@ -26112,9 +26111,8 @@ var require_initialize_node = __commonJS({
     var Puppeteer_js_1 = require_Puppeteer2();
     var revisions_js_1 = require_revisions();
     var pkg_dir_1 = require_pkg_dir();
-    var path_1 = __require("path");
     var initializePuppeteerNode = (packageName) => {
-      const puppeteerRootDirectory = (0, pkg_dir_1.sync)((0, path_1.dirname)(__require.resolve("./initialize-node")));
+      const puppeteerRootDirectory = (0, pkg_dir_1.sync)(__dirname);
       let preferredRevision = revisions_js_1.PUPPETEER_REVISIONS.chromium;
       const isPuppeteerCore = packageName === "puppeteer-core";
       const productName = isPuppeteerCore ? void 0 : process.env.PUPPETEER_PRODUCT || process.env.npm_config_puppeteer_product || process.env.npm_package_config_puppeteer_product;
