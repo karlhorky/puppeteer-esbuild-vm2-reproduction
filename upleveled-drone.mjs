@@ -3496,7 +3496,7 @@ var require_JSHandle = __commonJS({
         (0, assert_js_1.assert)(boundingBox.width !== 0, "Node has 0 width.");
         (0, assert_js_1.assert)(boundingBox.height !== 0, "Node has 0 height.");
         const layoutMetrics = await this._client.send("Page.getLayoutMetrics");
-        const { pageX, pageY } = layoutMetrics.cssLayoutViewport || layoutMetrics.layoutViewport;
+        const { pageX, pageY } = layoutMetrics.cssVisualViewport || layoutMetrics.layoutViewport;
         const clip = Object.assign({}, boundingBox);
         clip.x += pageX;
         clip.y += pageY;
@@ -4117,6 +4117,7 @@ var require_HTTPResponse = __commonJS({
         for (const key of Object.keys(headers))
           this._headers[key.toLowerCase()] = headers[key];
         this._securityDetails = responsePayload.securityDetails ? new SecurityDetails_js_1.SecurityDetails(responsePayload.securityDetails) : null;
+        this._timing = responsePayload.timing;
       }
       _parseStatusTextFromExtrInfo(extraInfo) {
         if (!extraInfo || !extraInfo.headersText)
@@ -4155,6 +4156,9 @@ var require_HTTPResponse = __commonJS({
       }
       securityDetails() {
         return this._securityDetails;
+      }
+      timing() {
+        return this._timing;
       }
       buffer() {
         if (!this._contentPromise) {
@@ -4768,7 +4772,8 @@ var require_DOMWorld = __commonJS({
         this._frame = frame;
         this._timeoutSettings = timeoutSettings;
         this._setContext(null);
-        this._client.on("Runtime.bindingCalled", (event) => this._onBindingCalled(event));
+        this._onBindingCalled = this._onBindingCalled.bind(this);
+        this._client.on("Runtime.bindingCalled", this._onBindingCalled);
       }
       frame() {
         return this._frame;
@@ -4793,6 +4798,7 @@ var require_DOMWorld = __commonJS({
       }
       _detach() {
         this._detached = true;
+        this._client.off("Runtime.bindingCalled", this._onBindingCalled);
         for (const waitTask of this._waitTasks)
           waitTask.terminate(new Error("waitForFunction failed: frame got detached."));
       }
@@ -5659,6 +5665,9 @@ var require_FrameManager = __commonJS({
       }
       async waitForNavigation(options = {}) {
         return await this._frameManager.waitForFrameNavigation(this, options);
+      }
+      client() {
+        return this._client;
       }
       executionContext() {
         return this._mainWorld.executionContext();
@@ -8402,9 +8411,6 @@ var require_Browser = __commonJS({
       }
       async waitForTarget(predicate, options = {}) {
         const { timeout = 3e4 } = options;
-        const existingTarget = this.targets().find(predicate);
-        if (existingTarget)
-          return existingTarget;
         let resolve;
         const targetPromise = new Promise((x) => resolve = x);
         this.on("targetcreated", check);
@@ -8412,13 +8418,23 @@ var require_Browser = __commonJS({
         try {
           if (!timeout)
             return await targetPromise;
-          return await helper_js_1.helper.waitWithTimeout(targetPromise, "target", timeout);
+          return await helper_js_1.helper.waitWithTimeout(Promise.race([
+            targetPromise,
+            (async () => {
+              for (const target of this.targets()) {
+                if (await predicate(target)) {
+                  return target;
+                }
+              }
+              await targetPromise;
+            })()
+          ]), "target", timeout);
         } finally {
           this.removeListener("targetcreated", check);
           this.removeListener("targetchanged", check);
         }
-        function check(target) {
-          if (predicate(target))
+        async function check(target) {
+          if (await predicate(target))
             resolve(target);
         }
       }
@@ -14042,7 +14058,7 @@ var require_package = __commonJS({
   "node_modules/puppeteer/package.json"(exports, module) {
     module.exports = {
       name: "puppeteer",
-      version: "13.3.1",
+      version: "13.4.0",
       description: "A high-level API to control headless Chrome over the DevTools Protocol",
       main: "./cjs-entry.js",
       types: "lib/types.d.ts",
@@ -14066,9 +14082,9 @@ var require_package = __commonJS({
         eslint: '([ "$CI" = true ] && eslint --ext js --ext ts --quiet -f codeframe . || eslint --ext js --ext ts .)',
         "eslint-fix": "eslint --ext js --ext ts --fix .",
         commitlint: "commitlint --from=HEAD~1",
-        markdownlint: "prettier --check **/README.md docs/troubleshooting.md",
-        "markdownlint-fix": "prettier --write **/README.md docs/troubleshooting.md",
-        lint: "npm run eslint && npm run build && npm run doc && npm run markdownlint",
+        prettier: "prettier --check .",
+        "prettier-fix": "prettier --write .",
+        lint: "npm run eslint && npm run build && npm run doc && npm run prettier",
         doc: "node utils/doclint/cli.js",
         "clean-lib": "rimraf lib",
         build: "npm run tsc && npm run generate-d-ts",
@@ -14114,38 +14130,38 @@ var require_package = __commonJS({
         ws: "8.5.0"
       },
       devDependencies: {
-        "@commitlint/cli": "16.1.0",
-        "@commitlint/config-conventional": "16.0.0",
-        "@microsoft/api-documenter": "7.15.2",
+        "@commitlint/cli": "16.2.1",
+        "@commitlint/config-conventional": "16.2.1",
+        "@microsoft/api-documenter": "7.15.3",
         "@microsoft/api-extractor": "7.19.4",
         "@types/debug": "4.1.7",
         "@types/mime": "2.0.3",
         "@types/mocha": "9.1.0",
-        "@types/node": "17.0.17",
+        "@types/node": "17.0.19",
         "@types/progress": "2.0.5",
         "@types/proxy-from-env": "1.0.1",
         "@types/rimraf": "3.0.2",
         "@types/sinon": "10.0.11",
         "@types/tar-fs": "2.0.1",
-        "@types/ws": "8.2.2",
-        "@typescript-eslint/eslint-plugin": "5.11.0",
-        "@typescript-eslint/parser": "5.11.0",
+        "@types/ws": "8.2.3",
+        "@typescript-eslint/eslint-plugin": "5.12.1",
+        "@typescript-eslint/parser": "5.12.1",
         "@web/test-runner": "0.13.27",
         commonmark: "0.30.0",
         "cross-env": "7.0.3",
-        eslint: "8.8.0",
-        "eslint-config-prettier": "8.3.0",
+        eslint: "8.9.0",
+        "eslint-config-prettier": "8.4.0",
         "eslint-plugin-import": "2.25.4",
         "eslint-plugin-mocha": "10.0.3",
         "eslint-plugin-prettier": "4.0.0",
-        "eslint-plugin-unicorn": "40.1.0",
+        "eslint-plugin-unicorn": "41.0.0",
         esprima: "4.0.1",
         expect: "25.2.7",
         husky: "7.0.4",
         "jpeg-js": "0.4.3",
         mime: "3.0.0",
         minimist: "1.2.5",
-        mocha: "9.2.0",
+        mocha: "9.2.1",
         ncp: "2.0.0",
         pixelmatch: "5.2.1",
         pngjs: "6.0.0",
@@ -14155,7 +14171,7 @@ var require_package = __commonJS({
         "standard-version": "9.3.2",
         "text-diff": "1.0.1",
         "ts-node": "10.5.0",
-        typescript: "4.4.4"
+        typescript: "4.5.5"
       }
     };
   }
@@ -25096,7 +25112,7 @@ If you think this is a bug, please report it on the Puppeteer issue tracker.`;
                 await removeFolderAsync(this._userDataDir);
                 fulfill();
               } catch (error) {
-                console.error(error);
+                (0, helper_js_1.debugError)(error);
                 reject(error);
               }
             } else {
@@ -25110,7 +25126,7 @@ If you think this is a bug, please report it on the Puppeteer issue tracker.`;
                     await renameAsync(prefsBackupPath, prefsPath);
                   }
                 } catch (error) {
-                  console.error(error);
+                  (0, helper_js_1.debugError)(error);
                   reject(error);
                 }
               }
@@ -25146,9 +25162,15 @@ If you think this is a bug, please report it on the Puppeteer issue tracker.`;
         return this._processClosing;
       }
       kill() {
-        if (this.proc && this.proc.pid && !this.proc.killed) {
+        if (this.proc && this.proc.pid && pidExists(this.proc.pid)) {
           try {
-            this.proc.kill("SIGKILL");
+            if (process.platform === "win32") {
+              childProcess.exec(`taskkill /pid ${this.proc.pid} /T /F`, () => {
+              });
+            } else {
+              const processGroupId = -this.proc.pid;
+              process.kill(processGroupId, "SIGKILL");
+            }
           } catch (error) {
             throw new Error(`${PROCESS_ERROR_EXPLANATION}
 Error cause: ${error.stack}`);
@@ -25216,6 +25238,17 @@ Error cause: ${error.stack}`);
           helper_js_1.helper.removeEventListeners(listeners);
         }
       });
+    }
+    function pidExists(pid) {
+      try {
+        return process.kill(pid, 0);
+      } catch (error) {
+        if (error && error.code && error.code === "ESRCH") {
+          return false;
+        } else {
+          throw error;
+        }
+      }
     }
   }
 });
@@ -25309,14 +25342,10 @@ var require_Launcher = __commonJS({
           (0, assert_js_1.assert)(!executablePath, "`executablePath` must not be specified when `channel` is given.");
           chromeExecutable = executablePathForChannel(channel);
         } else if (!executablePath) {
-          if (os.platform() !== "darwin" && os.arch() === "arm64") {
-            chromeExecutable = "/usr/bin/chromium-browser";
-          } else {
-            const { missingText, executablePath: executablePath2 } = resolveExecutablePath(this);
-            if (missingText)
-              throw new Error(missingText);
-            chromeExecutable = executablePath2;
-          }
+          const { missingText, executablePath: executablePath2 } = resolveExecutablePath(this);
+          if (missingText)
+            throw new Error(missingText);
+          chromeExecutable = executablePath2;
         }
         if (!chromeExecutable) {
           throw new Error("chromeExecutable is not found.");
@@ -25689,23 +25718,28 @@ var require_Launcher = __commonJS({
       return chromePath;
     }
     function resolveExecutablePath(launcher) {
+      const { product, _isPuppeteerCore, _projectRoot, _preferredRevision } = launcher;
       let downloadPath;
-      if (!launcher._isPuppeteerCore) {
+      if (!_isPuppeteerCore) {
         const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || process.env.npm_config_puppeteer_executable_path || process.env.npm_package_config_puppeteer_executable_path;
         if (executablePath) {
           const missingText2 = !fs.existsSync(executablePath) ? "Tried to use PUPPETEER_EXECUTABLE_PATH env variable to launch browser but did not find any executable at: " + executablePath : void 0;
           return { executablePath, missingText: missingText2 };
         }
+        const ubuntuChromiumPath = "/usr/bin/chromium-browser";
+        if (product === "chrome" && os.platform() !== "darwin" && os.arch() === "arm64" && fs.existsSync(ubuntuChromiumPath)) {
+          return { executablePath: ubuntuChromiumPath, missingText: void 0 };
+        }
         downloadPath = process.env.PUPPETEER_DOWNLOAD_PATH || process.env.npm_config_puppeteer_download_path || process.env.npm_package_config_puppeteer_download_path;
       }
-      if (!launcher._projectRoot) {
+      if (!_projectRoot) {
         throw new Error("_projectRoot is undefined. Unable to create a BrowserFetcher.");
       }
-      const browserFetcher = new BrowserFetcher_js_1.BrowserFetcher(launcher._projectRoot, {
-        product: launcher.product,
+      const browserFetcher = new BrowserFetcher_js_1.BrowserFetcher(_projectRoot, {
+        product,
         path: downloadPath
       });
-      if (!launcher._isPuppeteerCore && launcher.product === "chrome") {
+      if (!_isPuppeteerCore && product === "chrome") {
         const revision = process.env["PUPPETEER_CHROMIUM_REVISION"];
         if (revision) {
           const revisionInfo2 = browserFetcher.revisionInfo(revision);
@@ -25713,10 +25747,10 @@ var require_Launcher = __commonJS({
           return { executablePath: revisionInfo2.executablePath, missingText: missingText2 };
         }
       }
-      const revisionInfo = browserFetcher.revisionInfo(launcher._preferredRevision);
+      const revisionInfo = browserFetcher.revisionInfo(_preferredRevision);
       const firefoxHelp = `Run \`PUPPETEER_PRODUCT=firefox npm install\` to download a supported Firefox browser binary.`;
       const chromeHelp = `Run \`npm install\` to download the correct Chromium revision (${launcher._preferredRevision}).`;
-      const missingText = !revisionInfo.local ? `Could not find expected browser (${launcher.product}) locally. ${launcher.product === "chrome" ? chromeHelp : firefoxHelp}` : void 0;
+      const missingText = !revisionInfo.local ? `Could not find expected browser (${product}) locally. ${product === "chrome" ? chromeHelp : firefoxHelp}` : void 0;
       return { executablePath: revisionInfo.executablePath, missingText };
     }
     function Launcher(projectRoot, preferredRevision, isPuppeteerCore, product) {
@@ -26111,8 +26145,16 @@ var require_initialize_node = __commonJS({
     var Puppeteer_js_1 = require_Puppeteer2();
     var revisions_js_1 = require_revisions();
     var pkg_dir_1 = require_pkg_dir();
+    var path_1 = __require("path");
+    function resolvePuppeteerRootDirectory() {
+      try {
+        return (0, pkg_dir_1.sync)((0, path_1.dirname)(__require.resolve("./initialize-node")));
+      } catch (error) {
+        return (0, pkg_dir_1.sync)(__dirname);
+      }
+    }
     var initializePuppeteerNode = (packageName) => {
-      const puppeteerRootDirectory = (0, pkg_dir_1.sync)(__dirname);
+      const puppeteerRootDirectory = resolvePuppeteerRootDirectory();
       let preferredRevision = revisions_js_1.PUPPETEER_REVISIONS.chromium;
       const isPuppeteerCore = packageName === "puppeteer-core";
       const productName = isPuppeteerCore ? void 0 : process.env.PUPPETEER_PRODUCT || process.env.npm_config_puppeteer_product || process.env.npm_package_config_puppeteer_product;
