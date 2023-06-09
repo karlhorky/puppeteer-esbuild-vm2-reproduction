@@ -2,6 +2,11 @@
 
 Reproduction for https://github.com/puppeteer/puppeteer/issues/10352
 
+Reproduction steps:
+
+1. `pnpm build`
+2. `node abc.mjs`
+
 ```bash
 $ pnpm build  
 
